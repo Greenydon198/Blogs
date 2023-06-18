@@ -3,6 +3,7 @@ package com.driver.models;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -17,7 +18,7 @@ public class User {
     private String lastName;
     @OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
     @JsonIgnore
-    private List<Blog> blogList;
+    private List<Blog> blogList = new ArrayList<>();
 
     public User() {
     }
