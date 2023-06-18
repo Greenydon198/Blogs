@@ -1,6 +1,7 @@
 package com.driver.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -15,6 +16,7 @@ public class Blog {
     private int id;
     private String title;
     private String content;
+    @CreationTimestamp
     private Date pubDate;
     @ManyToOne
     @JoinColumn
